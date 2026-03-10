@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡ATENCIÓN! Permiso Anulado</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #c0392b; /* Un rojo fuerte y profesional */
+            --dark-bg: #2c3e50;    /* Fondo oscuro para contraste */
+            --light-text: #ecf0f1; /* Texto claro */
+            --warning-yellow: #f1c40f; /* Amarillo para el icono de advertencia */
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden; /* Evitar barras de desplazamiento durante animaciones */
+        }
+
+        .container {
+            text-align: center;
+            padding: 3rem;
+            max-width: 90%;
+            width: 700px;
+            background-color: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente */
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            animation: fadeInScale 1s ease-out forwards; /* Animación de entrada */
+            position: relative;
+            border-top: 8px solid var(--primary-red);
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .alert-icon {
+            font-size: 8rem; /* Icono grande */
+            color: var(--warning-yellow);
+            margin-bottom: 1rem;
+            animation: bounceIn 1.2s ease-out forwards; /* Animación de rebote */
+            display: inline-block; /* Necesario para la animación */
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.1); opacity: 1; }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4rem; /* Título muy grande */
+            color: var(--primary-red);
+            margin: 0.5rem 0 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: slideInLeft 1s ease-out forwards 0.3s; /* Animación con delay */
+            opacity: 0; /* Oculto al inicio */
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .message {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.8rem;
+            line-height: 1.4;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 0.8s; /* Animación con delay */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .authority {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: var(--warning-yellow);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0;
+            animation: slideInRight 1s ease-out forwards 1.2s; /* Animación con delay */
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem;
+            }
+            .alert-icon {
+                font-size: 6rem;
+            }
+            h1 {
+                font-size: 3rem;
+            }
+            .message {
+                font-size: 1.5rem;
+            }
+            .authority {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.5rem;
+                border-radius: 10px;
+            }
+            .alert-icon {
+                font-size: 4rem;
+                margin-bottom: 0.5rem;
+            }
+            h1 {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+            .message {
+                font-size: 1.2rem;
+                margin-bottom: 1.5rem;
+            }
+            .authority {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="alert-icon">
+            &#9888; </div>
+        <h1>Permiso Anulado</h1>
+        <p class="message">
+            Permiso no válido para circular.
+        </p>
+        <p class="authority">
+            Anulado por Comuna de Cerro Navia
+        </p>
+    </div>
+
+</body>
+</html>
